@@ -1,6 +1,6 @@
 const express = require("express");
 
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const apiroutes = require("./apiroutes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(apiroutes);
 
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Doc-Docs");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Menu-Data");
 
 // Start the API server
 app.listen(PORT, function() {
